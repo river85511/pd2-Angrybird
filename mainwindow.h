@@ -28,6 +28,8 @@
 #include "pig.h"
 #include "normalpig.h"
 
+#include "score.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -60,6 +62,8 @@ public:
 
     Brick *bricks[8];
     Pig *pigs[3];
+
+    Score *score;
 
 
 signals:

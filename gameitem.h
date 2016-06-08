@@ -24,6 +24,7 @@ public slots:
     void paint();
     virtual void checkMoved();
     virtual void checkOutOfBoundary();
+    virtual void updateScore();
     // TODO virtual void collide();
 
 protected:

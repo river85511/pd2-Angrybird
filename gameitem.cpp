@@ -66,3 +66,8 @@ void GameItem::checkOutOfBoundary()
 {
 
 }
+
+void GameItem::updateScore()
+{
+
+}

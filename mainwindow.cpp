@@ -63,6 +63,8 @@ void MainWindow::showEvent(QShowEvent *)
     pigs[1] = new normalPig(24.5f,5.5f,0.3f,&timer,QPixmap(":/image/pig.png").scaled(height()/10.0,height()/10.0),world,scene);
     pigs[2] = new normalPig(22.90f,10.0f,0.3f,&timer,QPixmap(":/image/pig.png").scaled(height()/10.0,height()/10.0),world,scene);
 
+    score = new Score(world,scene);
+
     // Setting the Velocity
     //birdie->setLinearVelocity(b2Vec2(5,5));
     itemList.push_back(slingshot);
@@ -83,6 +85,8 @@ void MainWindow::showEvent(QShowEvent *)
     itemList.push_back(pigs[0]);
     itemList.push_back(pigs[1]);
     itemList.push_back(pigs[2]);
+
+    itemList.push_back(score);
 
     bricks[3]->g_body->SetTransform(b2Vec2(21.25f,10.0f),1.5708);
     bricks[4]->g_body->SetTransform(b2Vec2(24.75f,10.0f),1.5708);
@@ -200,7 +204,7 @@ void MainWindow::tick()
     world->Step(1.0/60.0,6,2);
     scene->update();
 
-    std::cout << "pigKilled = " << pigKilled_count << std::endl;
+    //std::cout << "pigKilled = " << pigKilled_count << std::endl;
 
 }
 
