@@ -10,5 +10,10 @@
         <file>image/slingshot.png</file>
         <file>image/stoneblock_vert.png</file>
         <file>image/yellowbird.png</file>
+        <file>image/background.png</file>
+        <file>image/score_3.png</file>
+        <file>image/score_2.png</file>
+        <file>image/score_1.png</file>
+        <file>image/score_0.png</file>
     </qresource>
 </RCC>

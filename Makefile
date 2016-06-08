@@ -631,13 +631,18 @@ qrc_res.cpp: res.qrc \
 		image/GROUND.png \
 		image/Normal_Bird_1.png \
 		image/slingshot.png \
+		image/score_0.png \
 		image/pig.png \
 		image/blackbird.png \
 		image/block_vert.png \
+		image/background.png \
+		image/score_3.png \
 		image/yellowbird.png \
 		image/greenbird.png \
 		image/stoneblock_vert.png \
-		image/iceblock_vert.png
+		image/iceblock_vert.png \
+		image/score_2.png \
+		image/score_1.png
 	/home/river85511/Qt/5.6/gcc_64/bin/rcc -name res res.qrc -o qrc_res.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_gameitem.cpp

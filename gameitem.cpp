@@ -56,3 +56,13 @@ void GameItem::paint()
     //std::cout << g_body->GetPosition().x << std::endl;
 
 }
+
+void GameItem::checkMoved()
+{
+
+}
+
+void GameItem::checkOutOfBoundary()
+{
+
+}

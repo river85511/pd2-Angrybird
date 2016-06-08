@@ -13,9 +13,16 @@
 class Pig : public GameItem
 {
 public:
-    Pig(b2World *world);
+    Pig(b2World *world,float x);
     void setTransform(QPoint p);
     virtual void fake();
+
+    int removed_tag;
+
+public slots:
+    void checkMoved();
+private:
+    float original_x;
 };
 
 #endif // PIG_H

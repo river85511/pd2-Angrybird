@@ -1,6 +1,6 @@
 #include "normalpig.h"
 
-normalPig::normalPig(float x, float y, float radius, QTimer *timer, QPixmap pixmap, b2World *world, QGraphicsScene *scene):Pig(world)
+normalPig::normalPig(float x, float y, float radius, QTimer *timer, QPixmap pixmap, b2World *world, QGraphicsScene *scene):Pig(world,x)
 {
     // Set pixmap
     g_pixmap.setPixmap(pixmap);
@@ -24,7 +24,7 @@ normalPig::normalPig(float x, float y, float radius, QTimer *timer, QPixmap pixm
     g_body->SetAngularDamping(3);
     g_body->CreateFixture(&fixturedef);
 
-    g_body->SetType(b2_staticBody);
+    //g_body->SetType(b2_staticBody);
 
     // Bound timer
     connect(timer, SIGNAL(timeout()), this,SLOT(paint()));

@@ -4,7 +4,7 @@
 #include <QCursor>
 #include <QPoint>
 
-
+int pigKilled_count = 0;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -29,6 +29,7 @@ void MainWindow::showEvent(QShowEvent *)
     // Setting the QGraphicsScene
     scene = new QGraphicsScene(0,0,width(),ui->graphicsView->height());
     ui->graphicsView->setScene(scene);
+    ui->graphicsView->setBackgroundBrush(QPixmap(":/image/background.png").scaled(970,550));
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
@@ -58,9 +59,9 @@ void MainWindow::showEvent(QShowEvent *)
     bricks[6] = new stoneBrick_ver(24.75f,11.0f,-1.5f,1.0f,&timer,QPixmap(":/image/stoneblock_vert.png").scaled(width()/50,height()/4.5),world,scene);
     bricks[7] = new woodBrick_ver(26.5f,5.5f,-1.5f,1.0f,&timer,QPixmap(":/image/block_vert.png").scaled(width()/50,height()/4.5),world,scene);
 
-    //pigs[0] = new normalPig(21.25f,10.0f,0.27f,&timer,QPixmap(":/image/pig.png").scaled(height()/9.0,height()/9.0),world,scene);
-    //pigs[1] = new normalPig(24.75f,10.0f,0.27f,&timer,QPixmap(":/image/pig.png").scaled(height()/9.0,height()/9.0),world,scene);
-    //pigs[2] = new normalPig(23.0f,8.3f,15.0f,&timer,QPixmap(":/image/pig.png").scaled(height()/9.0,height()/9.0),world,scene);
+    pigs[0] = new normalPig(21.0f,5.5f,0.3f,&timer,QPixmap(":/image/pig.png").scaled(height()/10.0,height()/10.0),world,scene);
+    pigs[1] = new normalPig(24.5f,5.5f,0.3f,&timer,QPixmap(":/image/pig.png").scaled(height()/10.0,height()/10.0),world,scene);
+    pigs[2] = new normalPig(22.90f,10.0f,0.3f,&timer,QPixmap(":/image/pig.png").scaled(height()/10.0,height()/10.0),world,scene);
 
     // Setting the Velocity
     //birdie->setLinearVelocity(b2Vec2(5,5));
@@ -118,9 +119,11 @@ bool MainWindow::eventFilter(QObject *, QEvent *event)
             }
             else if( ( real_init_Pos.x()>130 && real_init_Pos.x()<240 ) && (real_init_Pos.y()>260 && real_init_Pos.y() <340)){
                 clicked_tag = 1;
+                currentBird->g_body->SetType(b2_staticBody);
+                currentBird->setTransform(init_Pos);
             }
-            currentBird->g_body->SetType(b2_staticBody);
-            currentBird->setTransform(init_Pos);
+            //currentBird->g_body->SetType(b2_staticBody);
+            //currentBird->setTransform(init_Pos);
         }
 
         if( (mouseEvent->button() == Qt::RightButton) && (flyBird->usedSkill_tag == 0)){
@@ -196,6 +199,8 @@ void MainWindow::tick()
 {
     world->Step(1.0/60.0,6,2);
     scene->update();
+
+    std::cout << "pigKilled = " << pigKilled_count << std::endl;
 
 }
 

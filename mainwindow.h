@@ -49,6 +49,7 @@ public:
     int clicked_tag;
     int moved_tag;
     int bird_count;
+
     QPoint real_init_Pos;
     QPoint real_moved_Pos;
 
