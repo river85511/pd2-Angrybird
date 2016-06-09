@@ -29,10 +29,13 @@ void Pig::checkMoved()
 
         if( g_body->GetPosition().x - original_x>0.02 || g_body->GetPosition().x - original_x< -0.6 ){
 
-            std::cout <<"PIG REMOVED" <<std::endl;
+            std::cout << "PIG REMOVED" <<std::endl;
             removed_tag = 1;
-            g_body->GetWorld()->DestroyBody(g_body);
-            delete this;
+            //g_body->GetWorld()->DestroyBody(g_body);
+            //delete this;
+
+            g_body->SetTransform(b2Vec2(40,5),0);
+            g_body->SetLinearVelocity(b2Vec2(0,0));
 
             pigKilled_count++;
         }

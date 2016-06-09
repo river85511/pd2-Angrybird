@@ -6,12 +6,16 @@
 #include <QTransform>
 #include <QtMath>
 #include <QGraphicsScene>
+#include <QMouseEvent>
+#include <iostream>
+#include <QGraphicsSceneMouseEvent>
 
 class Button: public QObject
 {
     Q_OBJECT
 public:
     Button(QPixmap graph,int x, int y,QGraphicsScene *scene);
+
 private:
     QGraphicsPixmapItem pixmap;
 

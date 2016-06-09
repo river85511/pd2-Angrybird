@@ -647,6 +647,7 @@ qrc_res.cpp: res.qrc \
 		image/block_vert.png \
 		image/background.png \
 		image/score_3.png \
+		image/exitbutton_new.png \
 		image/yellowbird.png \
 		image/greenbird.png \
 		image/stoneblock_vert.png \
@@ -654,7 +655,8 @@ qrc_res.cpp: res.qrc \
 		image/score_2.png \
 		image/replaybutton.png \
 		image/exitbutton.png \
-		image/score_1.png
+		image/score_1.png \
+		image/replaybutton_new.png
 	/home/river85511/Qt/5.6/gcc_64/bin/rcc -name res res.qrc -o qrc_res.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_gameitem.cpp moc_button.cpp
@@ -815,7 +817,7 @@ moc_mainwindow.cpp: ../../../Qt/5.6/gcc_64/include/QtWidgets/QMainWindow \
 		Box2D/Dynamics/Joints/b2WheelJoint.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/QMouseEvent \
 		../../../Qt/5.6/gcc_64/include/QtCore/QPoint \
-		gameitem.h \
+		button.h \
 		../../../Qt/5.6/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../../../Qt/5.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/QPainter \
@@ -824,6 +826,7 @@ moc_mainwindow.cpp: ../../../Qt/5.6/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/5.6/gcc_64/include/QtGui/QTransform \
 		../../../Qt/5.6/gcc_64/include/QtCore/QtMath \
 		../../../Qt/5.6/gcc_64/include/QtCore/qmath.h \
+		gameitem.h \
 		land.h \
 		bird.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/QPixmap \
@@ -1082,6 +1085,8 @@ moc_button.cpp: ../../../Qt/5.6/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../../../Qt/5.6/gcc_64/include/QtGui/QTransform \
 		../../../Qt/5.6/gcc_64/include/QtCore/QtMath \
 		../../../Qt/5.6/gcc_64/include/QtCore/qmath.h \
+		../../../Qt/5.6/gcc_64/include/QtWidgets/QGraphicsScene \
+		../../../Qt/5.6/gcc_64/include/QtWidgets/qgraphicsscene.h \
 		button.h
 	/home/river85511/Qt/5.6/gcc_64/bin/moc $(DEFINES) -I/home/river85511/Qt/5.6/gcc_64/mkspecs/linux-g++ -I/home/river85511/Desktop/pd3_2/src -I/home/river85511/Qt/5.6/gcc_64/include -I/home/river85511/Qt/5.6/gcc_64/include/QtWidgets -I/home/river85511/Qt/5.6/gcc_64/include/QtGui -I/home/river85511/Qt/5.6/gcc_64/include/QtCore button.h -o moc_button.cpp
 
@@ -1259,7 +1264,7 @@ main.o: main.cpp mainwindow.h \
 		Box2D/Dynamics/Joints/b2WheelJoint.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/QMouseEvent \
 		../../../Qt/5.6/gcc_64/include/QtCore/QPoint \
-		gameitem.h \
+		button.h \
 		../../../Qt/5.6/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../../../Qt/5.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/QPainter \
@@ -1268,6 +1273,7 @@ main.o: main.cpp mainwindow.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/QTransform \
 		../../../Qt/5.6/gcc_64/include/QtCore/QtMath \
 		../../../Qt/5.6/gcc_64/include/QtCore/qmath.h \
+		gameitem.h \
 		land.h \
 		bird.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/QPixmap \
@@ -1447,7 +1453,7 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		Box2D/Dynamics/Joints/b2WheelJoint.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/QMouseEvent \
 		../../../Qt/5.6/gcc_64/include/QtCore/QPoint \
-		gameitem.h \
+		button.h \
 		../../../Qt/5.6/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../../../Qt/5.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/QPainter \
@@ -1456,6 +1462,7 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/QTransform \
 		../../../Qt/5.6/gcc_64/include/QtCore/QtMath \
 		../../../Qt/5.6/gcc_64/include/QtCore/qmath.h \
+		gameitem.h \
 		land.h \
 		bird.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/QPixmap \
@@ -3816,7 +3823,9 @@ button.o: button.cpp button.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/qfontmetrics.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/QTransform \
 		../../../Qt/5.6/gcc_64/include/QtCore/QtMath \
-		../../../Qt/5.6/gcc_64/include/QtCore/qmath.h
+		../../../Qt/5.6/gcc_64/include/QtCore/qmath.h \
+		../../../Qt/5.6/gcc_64/include/QtWidgets/QGraphicsScene \
+		../../../Qt/5.6/gcc_64/include/QtWidgets/qgraphicsscene.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o button.o button.cpp
 
 qrc_res.o: qrc_res.cpp 

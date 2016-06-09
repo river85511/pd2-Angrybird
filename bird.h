@@ -21,8 +21,6 @@ public:
     int flyed_tag;
     int usedSkill_tag;
 
-public slots:
-    void checkOutOfBoundary();
 };
 
 #endif // BIRD_H

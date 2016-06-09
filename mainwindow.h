@@ -49,6 +49,7 @@ public:
     //void mouseMoveEvent(QMouseEvent * event);
     //void mouseReleaseEvent(QMouseEvent * event);
     bool eventFilter(QObject *,QEvent *event);
+    void spawn();
 
     int clicked_tag;
     int moved_tag;
@@ -60,6 +61,7 @@ public:
     Button *buttons[2];
 
     Bird *birdie[4];
+
     SlingShot *slingshot;
     Bird *flyBird;
     Bird *currentBird;
@@ -73,11 +75,14 @@ public:
 signals:
     // Signal for closing the game
     void quitGame();
+    // Signal for restarting the game
+    void restartGame();
 
 private slots:
     void tick();
     // For debug slot
     void QUITSLOT();
+    void RESTARTSLOT();
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;

@@ -8,3 +8,5 @@ Button::Button(QPixmap graph,int x, int y,QGraphicsScene *scene)
 
     scene->addItem(&pixmap);
 }
+
+
