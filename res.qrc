@@ -15,5 +15,7 @@
         <file>image/score_2.png</file>
         <file>image/score_1.png</file>
         <file>image/score_0.png</file>
+        <file>image/exitbutton.png</file>
+        <file>image/replaybutton.png</file>
     </qresource>
 </RCC>

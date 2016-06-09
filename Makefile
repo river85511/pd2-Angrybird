@@ -64,9 +64,11 @@ SOURCES       = main.cpp \
 		stonebrick_ver.cpp \
 		woodbrick_ver.cpp \
 		yellowbird.cpp \
-		score.cpp qrc_res.cpp \
+		score.cpp \
+		button.cpp qrc_res.cpp \
 		moc_mainwindow.cpp \
-		moc_gameitem.cpp
+		moc_gameitem.cpp \
+		moc_button.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		gameitem.o \
@@ -84,9 +86,11 @@ OBJECTS       = main.o \
 		woodbrick_ver.o \
 		yellowbird.o \
 		score.o \
+		button.o \
 		qrc_res.o \
 		moc_mainwindow.o \
-		moc_gameitem.o
+		moc_gameitem.o \
+		moc_button.o
 DIST          = ../../../Qt/5.6/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.6/gcc_64/mkspecs/common/unix.conf \
 		../../../Qt/5.6/gcc_64/mkspecs/common/linux.conf \
@@ -283,7 +287,8 @@ DIST          = ../../../Qt/5.6/gcc_64/mkspecs/features/spec_pre.prf \
 		stonebrick_ver.h \
 		woodbrick_ver.h \
 		yellowbird.h \
-		score.h main.cpp \
+		score.h \
+		button.h main.cpp \
 		mainwindow.cpp \
 		gameitem.cpp \
 		bird.cpp \
@@ -299,7 +304,8 @@ DIST          = ../../../Qt/5.6/gcc_64/mkspecs/features/spec_pre.prf \
 		stonebrick_ver.cpp \
 		woodbrick_ver.cpp \
 		yellowbird.cpp \
-		score.cpp
+		score.cpp \
+		button.cpp
 QMAKE_TARGET  = AngryThing
 DESTDIR       = 
 TARGET        = AngryThing
@@ -605,8 +611,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents res.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h Box2D/Collision/Shapes/b2ChainShape.h Box2D/Collision/Shapes/b2CircleShape.h Box2D/Collision/Shapes/b2EdgeShape.h Box2D/Collision/Shapes/b2PolygonShape.h Box2D/Collision/Shapes/b2Shape.h Box2D/Collision/b2BroadPhase.h Box2D/Collision/b2Collision.h Box2D/Collision/b2Distance.h Box2D/Collision/b2DynamicTree.h Box2D/Collision/b2TimeOfImpact.h Box2D/Common/b2BlockAllocator.h Box2D/Common/b2Draw.h Box2D/Common/b2GrowableStack.h Box2D/Common/b2Math.h Box2D/Common/b2Settings.h Box2D/Common/b2StackAllocator.h Box2D/Common/b2Timer.h Box2D/Dynamics/Contacts/b2ChainAndCircleContact.h Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.h Box2D/Dynamics/Contacts/b2CircleContact.h Box2D/Dynamics/Contacts/b2Contact.h Box2D/Dynamics/Contacts/b2ContactSolver.h Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.h Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.h Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.h Box2D/Dynamics/Contacts/b2PolygonContact.h Box2D/Dynamics/Joints/b2DistanceJoint.h Box2D/Dynamics/Joints/b2FrictionJoint.h Box2D/Dynamics/Joints/b2GearJoint.h Box2D/Dynamics/Joints/b2Joint.h Box2D/Dynamics/Joints/b2MotorJoint.h Box2D/Dynamics/Joints/b2MouseJoint.h Box2D/Dynamics/Joints/b2PrismaticJoint.h Box2D/Dynamics/Joints/b2PulleyJoint.h Box2D/Dynamics/Joints/b2RevoluteJoint.h Box2D/Dynamics/Joints/b2RopeJoint.h Box2D/Dynamics/Joints/b2WeldJoint.h Box2D/Dynamics/Joints/b2WheelJoint.h Box2D/Dynamics/b2Body.h Box2D/Dynamics/b2ContactManager.h Box2D/Dynamics/b2Fixture.h Box2D/Dynamics/b2Island.h Box2D/Dynamics/b2TimeStep.h Box2D/Dynamics/b2World.h Box2D/Dynamics/b2WorldCallbacks.h Box2D/Rope/b2Rope.h Box2D/Box2D.h gameitem.h bird.h land.h blackbird.h brick.h greenbird.h icebrick_vert.h normalpig.h pig.h redbird.h slingshot.h stonebrick_ver.h woodbrick_ver.h yellowbird.h score.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp gameitem.cpp bird.cpp land.cpp blackbird.cpp brick.cpp greenbird.cpp icebrick_vert.cpp normalpig.cpp pig.cpp redbird.cpp slingshot.cpp stonebrick_ver.cpp woodbrick_ver.cpp yellowbird.cpp score.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h Box2D/Collision/Shapes/b2ChainShape.h Box2D/Collision/Shapes/b2CircleShape.h Box2D/Collision/Shapes/b2EdgeShape.h Box2D/Collision/Shapes/b2PolygonShape.h Box2D/Collision/Shapes/b2Shape.h Box2D/Collision/b2BroadPhase.h Box2D/Collision/b2Collision.h Box2D/Collision/b2Distance.h Box2D/Collision/b2DynamicTree.h Box2D/Collision/b2TimeOfImpact.h Box2D/Common/b2BlockAllocator.h Box2D/Common/b2Draw.h Box2D/Common/b2GrowableStack.h Box2D/Common/b2Math.h Box2D/Common/b2Settings.h Box2D/Common/b2StackAllocator.h Box2D/Common/b2Timer.h Box2D/Dynamics/Contacts/b2ChainAndCircleContact.h Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.h Box2D/Dynamics/Contacts/b2CircleContact.h Box2D/Dynamics/Contacts/b2Contact.h Box2D/Dynamics/Contacts/b2ContactSolver.h Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.h Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.h Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.h Box2D/Dynamics/Contacts/b2PolygonContact.h Box2D/Dynamics/Joints/b2DistanceJoint.h Box2D/Dynamics/Joints/b2FrictionJoint.h Box2D/Dynamics/Joints/b2GearJoint.h Box2D/Dynamics/Joints/b2Joint.h Box2D/Dynamics/Joints/b2MotorJoint.h Box2D/Dynamics/Joints/b2MouseJoint.h Box2D/Dynamics/Joints/b2PrismaticJoint.h Box2D/Dynamics/Joints/b2PulleyJoint.h Box2D/Dynamics/Joints/b2RevoluteJoint.h Box2D/Dynamics/Joints/b2RopeJoint.h Box2D/Dynamics/Joints/b2WeldJoint.h Box2D/Dynamics/Joints/b2WheelJoint.h Box2D/Dynamics/b2Body.h Box2D/Dynamics/b2ContactManager.h Box2D/Dynamics/b2Fixture.h Box2D/Dynamics/b2Island.h Box2D/Dynamics/b2TimeStep.h Box2D/Dynamics/b2World.h Box2D/Dynamics/b2WorldCallbacks.h Box2D/Rope/b2Rope.h Box2D/Box2D.h gameitem.h bird.h land.h blackbird.h brick.h greenbird.h icebrick_vert.h normalpig.h pig.h redbird.h slingshot.h stonebrick_ver.h woodbrick_ver.h yellowbird.h score.h button.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp gameitem.cpp bird.cpp land.cpp blackbird.cpp brick.cpp greenbird.cpp icebrick_vert.cpp normalpig.cpp pig.cpp redbird.cpp slingshot.cpp stonebrick_ver.cpp woodbrick_ver.cpp yellowbird.cpp score.cpp button.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -646,12 +652,14 @@ qrc_res.cpp: res.qrc \
 		image/stoneblock_vert.png \
 		image/iceblock_vert.png \
 		image/score_2.png \
+		image/replaybutton.png \
+		image/exitbutton.png \
 		image/score_1.png
 	/home/river85511/Qt/5.6/gcc_64/bin/rcc -name res res.qrc -o qrc_res.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_gameitem.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_gameitem.cpp moc_button.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_gameitem.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_gameitem.cpp moc_button.cpp
 moc_mainwindow.cpp: ../../../Qt/5.6/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/5.6/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../Qt/5.6/gcc_64/include/QtWidgets/qwidget.h \
@@ -830,6 +838,7 @@ moc_mainwindow.cpp: ../../../Qt/5.6/gcc_64/include/QtWidgets/QMainWindow \
 		stonebrick_ver.h \
 		pig.h \
 		normalpig.h \
+		score.h \
 		mainwindow.h
 	/home/river85511/Qt/5.6/gcc_64/bin/moc $(DEFINES) -I/home/river85511/Qt/5.6/gcc_64/mkspecs/linux-g++ -I/home/river85511/Desktop/pd3_2/src -I/home/river85511/Qt/5.6/gcc_64/include -I/home/river85511/Qt/5.6/gcc_64/include/QtWidgets -I/home/river85511/Qt/5.6/gcc_64/include/QtGui -I/home/river85511/Qt/5.6/gcc_64/include/QtCore mainwindow.h -o moc_mainwindow.cpp
 
@@ -972,6 +981,109 @@ moc_gameitem.cpp: Box2D/Box2D.h \
 		../../../Qt/5.6/gcc_64/include/QtCore/qmath.h \
 		gameitem.h
 	/home/river85511/Qt/5.6/gcc_64/bin/moc $(DEFINES) -I/home/river85511/Qt/5.6/gcc_64/mkspecs/linux-g++ -I/home/river85511/Desktop/pd3_2/src -I/home/river85511/Qt/5.6/gcc_64/include -I/home/river85511/Qt/5.6/gcc_64/include/QtWidgets -I/home/river85511/Qt/5.6/gcc_64/include/QtGui -I/home/river85511/Qt/5.6/gcc_64/include/QtCore gameitem.h -o moc_gameitem.cpp
+
+moc_button.cpp: ../../../Qt/5.6/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		../../../Qt/5.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qfeatures.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qtypetraits.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_gcc.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_armv7.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_armv6.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_armv5.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_ia64.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_x86.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_unix.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/QPainter \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpainter.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/QTransform \
+		../../../Qt/5.6/gcc_64/include/QtCore/QtMath \
+		../../../Qt/5.6/gcc_64/include/QtCore/qmath.h \
+		button.h
+	/home/river85511/Qt/5.6/gcc_64/bin/moc $(DEFINES) -I/home/river85511/Qt/5.6/gcc_64/mkspecs/linux-g++ -I/home/river85511/Desktop/pd3_2/src -I/home/river85511/Qt/5.6/gcc_64/include -I/home/river85511/Qt/5.6/gcc_64/include/QtWidgets -I/home/river85511/Qt/5.6/gcc_64/include/QtGui -I/home/river85511/Qt/5.6/gcc_64/include/QtCore button.h -o moc_button.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1170,6 +1282,7 @@ main.o: main.cpp mainwindow.h \
 		stonebrick_ver.h \
 		pig.h \
 		normalpig.h \
+		score.h \
 		../../../Qt/5.6/gcc_64/include/QtWidgets/QApplication \
 		../../../Qt/5.6/gcc_64/include/QtWidgets/qapplication.h \
 		../../../Qt/5.6/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1357,6 +1470,7 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		stonebrick_ver.h \
 		pig.h \
 		normalpig.h \
+		score.h \
 		ui_mainwindow.h \
 		../../../Qt/5.6/gcc_64/include/QtCore/QVariant \
 		../../../Qt/5.6/gcc_64/include/QtWidgets/QAction \
@@ -3456,7 +3570,45 @@ yellowbird.o: yellowbird.cpp yellowbird.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o yellowbird.o yellowbird.cpp
 
 score.o: score.cpp score.h \
-		../../../Qt/5.6/gcc_64/include/QtWidgets/QGraphicsRectItem \
+		gameitem.h \
+		Box2D/Box2D.h \
+		Box2D/Common/b2Settings.h \
+		Box2D/Common/b2Draw.h \
+		Box2D/Common/b2Math.h \
+		Box2D/Common/b2Timer.h \
+		Box2D/Collision/Shapes/b2CircleShape.h \
+		Box2D/Collision/Shapes/b2Shape.h \
+		Box2D/Common/b2BlockAllocator.h \
+		Box2D/Collision/b2Collision.h \
+		Box2D/Collision/Shapes/b2EdgeShape.h \
+		Box2D/Collision/Shapes/b2ChainShape.h \
+		Box2D/Collision/Shapes/b2PolygonShape.h \
+		Box2D/Collision/b2BroadPhase.h \
+		Box2D/Collision/b2DynamicTree.h \
+		Box2D/Common/b2GrowableStack.h \
+		Box2D/Collision/b2Distance.h \
+		Box2D/Collision/b2TimeOfImpact.h \
+		Box2D/Dynamics/b2Body.h \
+		Box2D/Dynamics/b2Fixture.h \
+		Box2D/Dynamics/b2WorldCallbacks.h \
+		Box2D/Dynamics/b2TimeStep.h \
+		Box2D/Dynamics/b2World.h \
+		Box2D/Common/b2StackAllocator.h \
+		Box2D/Dynamics/b2ContactManager.h \
+		Box2D/Dynamics/Contacts/b2Contact.h \
+		Box2D/Dynamics/Joints/b2DistanceJoint.h \
+		Box2D/Dynamics/Joints/b2Joint.h \
+		Box2D/Dynamics/Joints/b2FrictionJoint.h \
+		Box2D/Dynamics/Joints/b2GearJoint.h \
+		Box2D/Dynamics/Joints/b2MotorJoint.h \
+		Box2D/Dynamics/Joints/b2MouseJoint.h \
+		Box2D/Dynamics/Joints/b2PrismaticJoint.h \
+		Box2D/Dynamics/Joints/b2PulleyJoint.h \
+		Box2D/Dynamics/Joints/b2RevoluteJoint.h \
+		Box2D/Dynamics/Joints/b2RopeJoint.h \
+		Box2D/Dynamics/Joints/b2WeldJoint.h \
+		Box2D/Dynamics/Joints/b2WheelJoint.h \
+		../../../Qt/5.6/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../../../Qt/5.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
 		../../../Qt/5.6/gcc_64/include/QtCore/qglobal.h \
 		../../../Qt/5.6/gcc_64/include/QtCore/qconfig.h \
@@ -3544,8 +3696,128 @@ score.o: score.cpp score.h \
 		../../../Qt/5.6/gcc_64/include/QtCore/qsharedpointer_impl.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/qimage.h \
 		../../../Qt/5.6/gcc_64/include/QtGui/qpixelformat.h \
-		../../../Qt/5.6/gcc_64/include/QtGui/qtransform.h
+		../../../Qt/5.6/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/QPainter \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpainter.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/QTransform \
+		../../../Qt/5.6/gcc_64/include/QtCore/QtMath \
+		../../../Qt/5.6/gcc_64/include/QtCore/qmath.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/QPixmap \
+		../../../Qt/5.6/gcc_64/include/QtWidgets/QGraphicsScene \
+		../../../Qt/5.6/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/QTimer \
+		../../../Qt/5.6/gcc_64/include/QtCore/qtimer.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o score.o score.cpp
+
+button.o: button.cpp button.h \
+		../../../Qt/5.6/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		../../../Qt/5.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qfeatures.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qtypetraits.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_gcc.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_armv7.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_armv6.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_armv5.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_ia64.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_x86.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qatomic_unix.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.6/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/QPainter \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpainter.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.6/gcc_64/include/QtGui/QTransform \
+		../../../Qt/5.6/gcc_64/include/QtCore/QtMath \
+		../../../Qt/5.6/gcc_64/include/QtCore/qmath.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o button.o button.cpp
 
 qrc_res.o: qrc_res.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_res.o qrc_res.cpp
@@ -3555,6 +3827,9 @@ moc_mainwindow.o: moc_mainwindow.cpp
 
 moc_gameitem.o: moc_gameitem.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_gameitem.o moc_gameitem.cpp
+
+moc_button.o: moc_button.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_button.o moc_button.cpp
 
 ####### Install
 

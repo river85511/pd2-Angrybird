@@ -11,6 +11,8 @@
 #include <iostream>
 #include <QPoint>
 
+#include "button.h"
+
 #include <gameitem.h>
 #include <land.h>
 #include <bird.h>
@@ -55,6 +57,8 @@ public:
     QPoint real_init_Pos;
     QPoint real_moved_Pos;
 
+    Button *buttons[2];
+
     Bird *birdie[4];
     SlingShot *slingshot;
     Bird *flyBird;
@@ -79,6 +83,7 @@ private:
     QGraphicsScene *scene;
     b2World *world;
     QList<GameItem *> itemList;
+    QList<Button *> buttonList;
     QTimer timer;
 
 };

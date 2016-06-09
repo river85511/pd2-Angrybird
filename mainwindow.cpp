@@ -40,6 +40,9 @@ void MainWindow::showEvent(QShowEvent *)
     // Create ground (You can edit here)
     itemList.push_back(new Land(16,1.5,32,3,QPixmap(":/ground.png").scaled(width(),height()/6.0),world,scene));
 
+    buttons[0] = new Button(QPixmap(":/image/replaybutton.png"),200,10,scene);
+    //buttons[1] = new Button();
+
     // Create bird (You can edit here)
     slingshot = new SlingShot(4.66667f,5.83333f,3.33333f,5.0f,&timer,QPixmap(":/image/slingshot.png").scaled(width()/9,height()/3.3),world,scene);
     //std::cout << QPixmap(":/image/slingshot.png").height() << std::endl;
@@ -67,6 +70,10 @@ void MainWindow::showEvent(QShowEvent *)
 
     // Setting the Velocity
     //birdie->setLinearVelocity(b2Vec2(5,5));
+
+    buttonList.push_back(buttons[0]);
+    //itemList.push_back(buttons[1]);
+
     itemList.push_back(slingshot);
     itemList.push_back(birdie[0]);
     itemList.push_back(birdie[1]);

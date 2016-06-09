@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     stonebrick_ver.cpp \
     woodbrick_ver.cpp \
     yellowbird.cpp \
-    score.cpp
+    score.cpp \
+    button.cpp
 
 HEADERS  += mainwindow.h \
     Box2D/Collision/Shapes/b2ChainShape.h \
@@ -92,7 +93,8 @@ HEADERS  += mainwindow.h \
     stonebrick_ver.h \
     woodbrick_ver.h \
     yellowbird.h \
-    score.h
+    score.h \
+    button.h
 
 FORMS    += mainwindow.ui
 
